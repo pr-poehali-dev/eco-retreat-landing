@@ -61,31 +61,57 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-[#FEF3C7] via-white to-[#FEF3C7]">
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: "url('/img/ac377a90-4b5a-4989-a3ca-3332564c87d3.jpg')" }}
+          className="absolute inset-0 bg-cover bg-center opacity-40"
+          style={{ backgroundImage: "url('/img/c502ff55-8ed0-40b6-ac0e-4239646a979c.jpg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#F59E0B]/40 via-[#EC4899]/30 to-[#8B5CF6]/40" />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-500/30 via-rose-400/20 to-violet-400/30" />
         
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-[#1A1F2C] mb-6 leading-tight">
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in">
+          <div className="inline-block bg-white/95 backdrop-blur-sm rounded-full px-6 py-2 mb-6 shadow-lg">
+            <p className="text-sm font-semibold text-amber-600">РЕТРИТ "ЭКО-РЕФЛЕКС"</p>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-bold text-slate-800 mb-6 leading-tight">
             Позволь Себе<br />
             Остановиться и Отдохнуть
           </h1>
-          <p className="text-xl md:text-2xl text-[#403E43] mb-8 max-w-2xl mx-auto">
+          
+          <p className="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             Настало время сбросить напряжение, восстановить внутренний баланс и найти вдохновение в тишине природы
           </p>
           
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 mb-8 inline-block shadow-xl">
-            <p className="text-sm text-[#8A898C] mb-2">РЕТРИТ "ЭКО-РЕФЛЕКС"</p>
-            <p className="text-3xl font-bold text-[#F59E0B]">24–26 октября</p>
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 mb-10 inline-block shadow-2xl border-2 border-amber-200">
+            <div className="flex items-center gap-4 mb-4">
+              <Icon name="Calendar" className="text-amber-600" size={32} />
+              <p className="text-4xl font-bold text-slate-800">24–26 октября</p>
+            </div>
+            <p className="text-slate-600 text-lg">Трехдневное путешествие к себе</p>
           </div>
           
-          <Button
-            onClick={() => window.open("https://t.me/VyacheslavMaks", "_blank")}
-            className="bg-gradient-to-r from-[#F59E0B] to-[#EC4899] text-white px-12 py-6 text-lg rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105"
-          >
-            Забронировать место
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
+              onClick={() => window.open("https://t.me/VyacheslavMaks", "_blank")}
+              size="lg"
+              className="bg-gradient-to-r from-amber-500 to-rose-500 text-white px-10 py-7 text-xl rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 font-semibold"
+            >
+              <Icon name="Sparkles" className="mr-2" size={24} />
+              Забронировать место
+            </Button>
+            
+            <Button
+              onClick={() => window.open("tel:+79857554311", "_blank")}
+              variant="outline"
+              size="lg"
+              className="bg-white/90 backdrop-blur-sm border-2 border-amber-500 text-amber-700 px-10 py-7 text-xl rounded-full hover:bg-amber-50 transition-all duration-300 font-semibold"
+            >
+              <Icon name="Phone" className="mr-2" size={24} />
+              Позвонить
+            </Button>
+          </div>
+          
+          <p className="mt-6 text-amber-700 font-semibold text-lg animate-pulse">
+            ⏰ Мест осталось всего 6!
+          </p>
         </div>
       </section>
 
