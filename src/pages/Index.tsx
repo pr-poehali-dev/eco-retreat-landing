@@ -22,11 +22,12 @@ const Index = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2024-10-10T23:59:59").getTime();
+    const now = new Date();
+    const targetDate = new Date(now.getTime() + 6 * 24 * 60 * 60 * 1000);
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
-      const distance = targetDate - now;
+      const distance = targetDate.getTime() - now;
 
       if (distance < 0) {
         clearInterval(interval);
@@ -174,22 +175,29 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {[
               {
-                icon: "Coffee",
+                icon: "Zap",
                 title: "Техники возврата энергии",
                 description: "Эффективные методы для быстрого восстановления жизненной силы",
+                image: "/img/7284f185-7ddf-402c-a3fe-02eea9c463a6.jpg"
               },
               {
                 icon: "Trees",
                 title: "Прогулки на природе",
                 description: "Ежедневные моционы в лесу для медитативного контакта с природой",
+                image: "/img/a4d34b56-eb7c-4721-a8ed-121412127b68.jpg"
               },
               {
                 icon: "Flame",
                 title: "Посиделки у костра",
                 description: "Место для душевных бесед и наслаждения магией живого огня",
+                image: "/img/9e40f4de-b15c-4710-99f1-4d805c3573f2.jpg"
               },
             ].map((item, i) => (
-              <Card key={i} className="border-none shadow-lg bg-white">
+              <Card key={i} className="border-none shadow-lg bg-white overflow-hidden">
+                <div
+                  className="h-48 bg-cover bg-center"
+                  style={{ backgroundImage: `url('${item.image}')` }}
+                />
                 <CardContent className="p-6">
                   <Icon name={item.icon} className="text-[#F59E0B] mb-4" size={40} />
                   <h3 className="text-xl font-bold text-[#1A1F2C] mb-3">{item.title}</h3>
@@ -210,6 +218,10 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12">
             <Card className="border-none shadow-xl bg-white">
               <CardContent className="p-8">
+                <div
+                  className="h-48 rounded-2xl bg-cover bg-center mb-6"
+                  style={{ backgroundImage: "url('/img/7284f185-7ddf-402c-a3fe-02eea9c463a6.jpg')" }}
+                />
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-[#F59E0B] to-[#EC4899] rounded-full flex items-center justify-center mr-4">
                     <Icon name="Sparkles" className="text-white" size={24} />
@@ -244,7 +256,7 @@ const Index = () => {
                 />
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-[#8B5CF6] to-[#EC4899] rounded-full flex items-center justify-center mr-4">
-                    <Icon name="Blocks" className="text-white" size={24} />
+                    <Icon name="Box" className="text-white" size={24} />
                   </div>
                   <h3 className="text-2xl font-bold text-[#1A1F2C]">LEGO® Serious Play®</h3>
                 </div>
@@ -256,6 +268,10 @@ const Index = () => {
 
             <Card className="border-none shadow-xl bg-white">
               <CardContent className="p-8">
+                <div
+                  className="h-48 rounded-2xl bg-cover bg-center mb-6"
+                  style={{ backgroundImage: "url('/img/6cedd620-3dee-496f-b9d9-77a0a5b0c33f.jpg')" }}
+                />
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-[#F59E0B] to-[#8B5CF6] rounded-full flex items-center justify-center mr-4">
                     <Icon name="Waves" className="text-white" size={24} />
@@ -270,6 +286,10 @@ const Index = () => {
 
             <Card className="border-none shadow-xl bg-white">
               <CardContent className="p-8">
+                <div
+                  className="h-48 rounded-2xl bg-cover bg-center mb-6"
+                  style={{ backgroundImage: "url('/img/1fda9708-544a-485c-91d1-eb9b2b1e7f35.jpg')" }}
+                />
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-[#EC4899] to-[#8B5CF6] rounded-full flex items-center justify-center mr-4">
                     <Icon name="Image" className="text-white" size={24} />
@@ -392,7 +412,7 @@ const Index = () => {
 
           <div className="rounded-3xl overflow-hidden shadow-2xl h-96">
             <iframe
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3A8f4e3d2c1b0a9f8e7d6c5b4a3d2c1b0a&amp;source=constructor"
+              src="https://yandex.ru/map-widget/v1/?ll=37.050000%2C56.050000&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjA4OTM3MhJb0KDQvtGB0YHQuNGPLCDQnNC-0YHQutC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwg0KHQvtC70L3QtdGH0L3QvtCz0L7RgNGB0LrQuNC5INGA0LDQudC-0L0sINCx0LDQt9CwINC-0YLQtNGL0YXQsCDQkdC10YDRkdC30LrQuCwg0YHRgtGA0L7QtdC90LjQtSAxOSIKDXcLiUIVGiRdQg%2C%2C&z=15"
               width="100%"
               height="100%"
               frameBorder="0"
